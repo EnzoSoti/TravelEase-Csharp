@@ -27,15 +27,21 @@ namespace TechnoSystem
            int nHeightEllipse
            );
         DataTable dataTable = new DataTable();
-        string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+        string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
 
 
 
-        public IDCard()
+
+
+        public IDCard(string user, string pass)
         {
+            adminShowValues(user, pass);
             InitializeComponent();
             searchTxt.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, searchTxt.Width, searchTxt.Height, 30, 30));
 
+
+            categoryCMB.Text = "Categories";
+            categoryCMB.ForeColor = System.Drawing.Color.Gray;
             ArrayList categories = new ArrayList();
             categories.Add("Student");
             categories.Add("Citizens");
@@ -110,7 +116,7 @@ namespace TechnoSystem
             }
             catch (Exception ex)
             {
-                // Handle any exceptions
+                
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
@@ -206,6 +212,12 @@ namespace TechnoSystem
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Topup topup = new Topup();
+            topup.ShowDialog();
         }
     }
 }

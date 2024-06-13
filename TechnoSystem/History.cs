@@ -13,18 +13,21 @@ namespace TechnoSystem
 {
     public partial class History : LayoutForm
     {
-        string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+        string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
+
         DataTable dataTable = new DataTable();
-        public History()
+        public History(string user, string pass)
         {
+            adminShowValues(user, pass);
             InitializeComponent();
             LoadDataIntoDataGridView();
+
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         public void LoadDataIntoDataGridView()
@@ -36,7 +39,7 @@ namespace TechnoSystem
 
                     connection.Open();
 
-                    string selectQuery = "SELECT CARD_ID, TOPUP, DATE_TIME FROM TBL_HISTORY";
+                    string selectQuery = "SELECT * FROM TBL_HISTORY ORDER BY DATE_TIME DESC;";
 
 
                     using (SqlCommand command = new SqlCommand(selectQuery, connection))
@@ -56,9 +59,14 @@ namespace TechnoSystem
             }
             catch (Exception ex)
             {
-                // Handle any exceptions
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        
+        public void showAdmin(string user, string password)
+        {
+            adminShowValues(user, password);
+        }
+
     }
 }

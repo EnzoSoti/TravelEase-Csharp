@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel3 = new Panel();
+            button8 = new Button();
             searchBTN = new Button();
             button7 = new Button();
             button6 = new Button();
@@ -47,6 +48,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(button8);
             panel3.Controls.Add(searchBTN);
             panel3.Controls.Add(button7);
             panel3.Controls.Add(button6);
@@ -57,6 +59,20 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1536, 321);
             panel3.TabIndex = 1;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(78, 76, 126);
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Tahoma", 24F, FontStyle.Bold);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(676, 211);
+            button8.Name = "button8";
+            button8.Size = new Size(233, 79);
+            button8.TabIndex = 8;
+            button8.Text = "Top Up";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // searchBTN
             // 
@@ -133,7 +149,7 @@
             searchTxt.Font = new Font("Tahoma", 24F, FontStyle.Bold);
             searchTxt.Location = new Point(87, 61);
             searchTxt.Name = "searchTxt";
-            searchTxt.PlaceholderText = "🔍";
+            searchTxt.PlaceholderText = "🔍 Search";
             searchTxt.Size = new Size(503, 39);
             searchTxt.TabIndex = 0;
             // 
@@ -220,5 +236,6 @@
         private Button button6;
         private Button button4;
         private DataGridView dataGridView1;
+        private Button button8;
     }
 }

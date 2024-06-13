@@ -19,11 +19,14 @@ namespace TechnoSystem
 {
     public partial class Dashboard : LayoutForm
     {
-        public Dashboard()
+        public Dashboard(string user, string pass)
         {
+            adminShowValues(user, pass);
             InitializeComponent();
 
         }
+
+        string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
 
         private void pieChart1_Load(object sender, EventArgs e)
         {
@@ -35,7 +38,7 @@ namespace TechnoSystem
         {
             try
             {
-                string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+                
                 string query = "SELECT CATEGORY, COUNT(*) AS Count FROM TBL_REGISTER GROUP BY CATEGORY";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -80,7 +83,7 @@ namespace TechnoSystem
             try
             {
                 double totalAmount = 0;
-                string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+             
                 string query = "SELECT SUM(AMOUNT) AS TotalAmount FROM TBL_SELLING";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -94,7 +97,7 @@ namespace TechnoSystem
                     {
                         if (!reader.IsDBNull(0))
                         {
-                            totalAmount = reader.GetInt64(0);
+                            totalAmount = reader.GetDouble(0);
                         }
                     }
                     var whitePaint = new SolidColorPaint(SKColors.White);
@@ -133,25 +136,63 @@ namespace TechnoSystem
                     label4.Text = totalAmount.ToString();
                 }
             }
-                  
 
 
 
- catch (Exception ex)
- {
+
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
-
-     
-
 
 
         private void cartesianChart1_Load(object sender, EventArgs e)
         {
             LoadCartesian();
-         
+
         }
+
+        public void adminlogin(string username, string password)
+        {
+            try
+            {
+ 
+                string selectQuery = "SELECT * FROM TBL_ADMIN WHERE ADMIN_USERNAME = @username AND PASSWORD = @password";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@password", password);
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                MessageBox.Show($"Successfully Login {username}");
+
+                                adminShowValues(username, password);
+                                ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Incorrect Username or Password. Please try again.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex}");
+            }
+        }
+
+
+
     }
 }
 

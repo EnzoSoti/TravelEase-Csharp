@@ -36,25 +36,23 @@
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
-            panel2 = new Panel();
-            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            picBoxCircle1 = new PicBoxCircle();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxCircle1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(78, 76, 126);
+            panel1.Controls.Add(picBoxCircle1);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(panel2);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(-1, -1);
             panel1.Name = "panel1";
@@ -147,25 +145,6 @@
             label1.TabIndex = 2;
             label1.Text = "Kyan Villarin";
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(54, 48, 98);
-            panel2.Controls.Add(pictureBox2);
-            panel2.Location = new Point(41, 177);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(278, 212);
-            panel2.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(30, 21);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(228, 168);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.TravelEASE;
@@ -175,6 +154,22 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // picBoxCircle1
+            // 
+            picBoxCircle1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            picBoxCircle1.BorderColor = Color.RoyalBlue;
+            picBoxCircle1.BorderColor2 = Color.HotPink;
+            picBoxCircle1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            picBoxCircle1.BorderSize = 3;
+            picBoxCircle1.GradientAngle = 50F;
+            picBoxCircle1.Image = Properties.Resources.temp_removebg_preview;
+            picBoxCircle1.Location = new Point(55, 162);
+            picBoxCircle1.Name = "picBoxCircle1";
+            picBoxCircle1.Size = new Size(283, 249);
+            picBoxCircle1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxCircle1.TabIndex = 8;
+            picBoxCircle1.TabStop = false;
             // 
             // LayoutForm
             // 
@@ -187,9 +182,8 @@
             Text = "LayoutForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxCircle1).EndInit();
             ResumeLayout(false);
         }
 
@@ -198,12 +192,11 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private Panel panel2;
-        private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Button button1;
         private Button button3;
         private Button button2;
         private Button button4;
+        private PicBoxCircle picBoxCircle1;
     }
 }

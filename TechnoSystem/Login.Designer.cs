@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            CardIDTextBox = new TextBox();
+            label4 = new Label();
             button1 = new Button();
             checkBox1 = new CheckBox();
             passTextBox = new TextBox();
@@ -39,15 +41,19 @@
             label2 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(CardIDTextBox);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(passTextBox);
@@ -60,6 +66,26 @@
             panel1.Size = new Size(1097, 1062);
             panel1.TabIndex = 0;
             // 
+            // CardIDTextBox
+            // 
+            CardIDTextBox.BackColor = SystemColors.ScrollBar;
+            CardIDTextBox.BorderStyle = BorderStyle.None;
+            CardIDTextBox.Font = new Font("Tahoma", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CardIDTextBox.Location = new Point(153, 335);
+            CardIDTextBox.Name = "CardIDTextBox";
+            CardIDTextBox.Size = new Size(665, 39);
+            CardIDTextBox.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(153, 278);
+            label4.Name = "label4";
+            label4.Size = new Size(163, 45);
+            label4.TabIndex = 7;
+            label4.Text = "Card ID";
+            // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(78, 76, 126);
@@ -67,7 +93,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(350, 715);
+            button1.Location = new Point(335, 737);
             button1.Name = "button1";
             button1.Size = new Size(317, 87);
             button1.TabIndex = 6;
@@ -81,7 +107,7 @@
             checkBox1.BackColor = SystemColors.Window;
             checkBox1.Font = new Font("Tahoma", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             checkBox1.ForeColor = SystemColors.ScrollBar;
-            checkBox1.Location = new Point(460, 588);
+            checkBox1.Location = new Point(532, 648);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(286, 43);
             checkBox1.TabIndex = 5;
@@ -94,7 +120,7 @@
             passTextBox.BackColor = SystemColors.ScrollBar;
             passTextBox.BorderStyle = BorderStyle.None;
             passTextBox.Font = new Font("Tahoma", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            passTextBox.Location = new Point(233, 531);
+            passTextBox.Location = new Point(153, 589);
             passTextBox.Name = "passTextBox";
             passTextBox.Size = new Size(665, 39);
             passTextBox.TabIndex = 4;
@@ -103,18 +129,18 @@
             // 
             PasswordTextBox.AutoSize = true;
             PasswordTextBox.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PasswordTextBox.Location = new Point(233, 465);
+            PasswordTextBox.Location = new Point(153, 523);
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.Size = new Size(207, 45);
+            PasswordTextBox.Size = new Size(199, 45);
             PasswordTextBox.TabIndex = 3;
-            PasswordTextBox.Text = "Username";
+            PasswordTextBox.Text = "Password";
             // 
             // usernameTextBox
             // 
             usernameTextBox.BackColor = SystemColors.ScrollBar;
             usernameTextBox.BorderStyle = BorderStyle.None;
             usernameTextBox.Font = new Font("Tahoma", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            usernameTextBox.Location = new Point(233, 385);
+            usernameTextBox.Location = new Point(153, 443);
             usernameTextBox.Name = "usernameTextBox";
             usernameTextBox.Size = new Size(665, 39);
             usernameTextBox.TabIndex = 2;
@@ -123,7 +149,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(233, 328);
+            label3.Location = new Point(153, 386);
             label3.Name = "label3";
             label3.Size = new Size(207, 45);
             label3.TabIndex = 1;
@@ -151,10 +177,18 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(249, 148, 23);
+            panel3.Controls.Add(flowLayoutPanel1);
             panel3.Location = new Point(843, 1);
             panel3.Name = "panel3";
             panel3.Size = new Size(19, 1063);
             panel3.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(12, 131);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(200, 100);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -195,6 +229,7 @@
             Text = "Login";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -214,5 +249,8 @@
         private TextBox passTextBox;
         private Label PasswordTextBox;
         private Button button1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private TextBox CardIDTextBox;
+        private Label label4;
     }
 }

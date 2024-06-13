@@ -16,6 +16,7 @@ namespace TechnoSystem
 {
     public partial class Additem : Form
     {
+
         string EmailPattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
         string MobnumPattern = "^09\\d{9}$";
         string PassPattern = "^[A-Z].{7,}$";
@@ -59,6 +60,7 @@ namespace TechnoSystem
             categoriesCMB.Text = "Categories";
             categoriesCMB.ForeColor = System.Drawing.Color.Gray;
         }
+        string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -72,7 +74,7 @@ namespace TechnoSystem
             openFileDialog.Filter = "JPG files (*.jpg)|*.jpg|PNG files (*.png)|*.png";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pictureBox2.ImageLocation = openFileDialog.FileName;
+                picBoxCircle1.ImageLocation = openFileDialog.FileName;
             }
         }
 
@@ -135,7 +137,8 @@ namespace TechnoSystem
                                     {
                                         try
                                         {
-                                            string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+                                            string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
+
 
                                             byte[] imageData = null;
                                             if (pictureBox1.Image != null)
@@ -264,7 +267,8 @@ namespace TechnoSystem
                                     }
                                     else
                                     {
-                                        string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+                                        string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
+
 
                                         string updateQuery = "UPDATE TBL_REGISTER SET FIRST_NAME = @fname, LAST_NAME = @lname, USER_NAME = @username, " +
                                                              "EMAIL = @email, ADDRESS = @address, MOBIBLE_NO  = @mobileNum, PASSWORD = @password, " +
@@ -350,7 +354,8 @@ namespace TechnoSystem
                     }
                     else
                     {
-                        string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+                        string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
+
 
                         string deleteQuery = "DELETE FROM TBL_REGISTER WHERE CARD_ID = @cardID";
 

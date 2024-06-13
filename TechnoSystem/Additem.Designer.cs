@@ -31,7 +31,6 @@
             panel1 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             browseBTN = new Button();
             label2 = new Label();
             FnameTextBox = new TextBox();
@@ -56,9 +55,10 @@
             button3 = new Button();
             button2 = new Button();
             genderCMB = new ComboBox();
+            picBoxCircle1 = new PicBoxCircle();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxCircle1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -91,16 +91,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.temp_removebg_preview;
-            pictureBox2.Location = new Point(12, 77);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(167, 147);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // browseBTN
             // 
@@ -360,11 +350,22 @@
             genderCMB.Size = new Size(276, 43);
             genderCMB.TabIndex = 27;
             // 
+            // picBoxCircle1
+            // 
+            picBoxCircle1.Image = Properties.Resources.temp_removebg_preview;
+            picBoxCircle1.Location = new Point(27, 91);
+            picBoxCircle1.Name = "picBoxCircle1";
+            picBoxCircle1.Size = new Size(137, 130);
+            picBoxCircle1.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxCircle1.TabIndex = 28;
+            picBoxCircle1.TabStop = false;
+            // 
             // Additem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1073, 662);
+            Controls.Add(picBoxCircle1);
             Controls.Add(genderCMB);
             Controls.Add(button2);
             Controls.Add(button3);
@@ -389,14 +390,13 @@
             Controls.Add(FnameTextBox);
             Controls.Add(label2);
             Controls.Add(browseBTN);
-            Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Name = "Additem";
             Text = "Additem";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxCircle1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -406,7 +406,6 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;
-        private PictureBox pictureBox2;
         private Button browseBTN;
         private Label label2;
         private TextBox FnameTextBox;
@@ -431,5 +430,6 @@
         private Button button3;
         private Button button2;
         private ComboBox genderCMB;
+        private PicBoxCircle picBoxCircle1;
     }
 }

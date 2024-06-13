@@ -33,7 +33,8 @@ namespace TechnoSystem
 
             try
             {
-                string connectionString = "Data Source=DESKTOP-MJEN1H5\\SQLEXPRESS;Initial Catalog=DB_KYAN;Persist Security Info=True;User ID=mm;Password=1;Encrypt=False;Trust Server Certificate=True";
+                string connectionString = "Data Source=DESKTOP-HU962IE;Initial Catalog=TravelEaseDB;Persist Security Info=True;User ID=root1;Password=password1;Encrypt=False;TrustServerCertificate=True";
+
 
                 string insertQuery = "INSERT INTO TBL_HISTORY (CARD_ID, TOPUP, DATE_TIME)" +
                    "VALUES (@cardID, @topUP, @dateTime )" +
